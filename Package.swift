@@ -18,7 +18,18 @@ let package = Package(
             name: "libopenmpt",
             path: "Sources/openmpt",
             exclude: [
+                // i wish i could just specify *.cpp to avoid including these
+                "libopenmpt/Doxyfile",
+                "libopenmpt/bindings",
+                "libopenmpt/in_openmpt",
                 "libopenmpt/xmp-openmpt",
+                "libopenmpt/libopenmpt_test",
+                "libopenmpt/plugin-common",
+                "libopenmpt/libopenmpt.pc.in",
+                "libopenmpt/libopenmpt_version.mk",
+                // windows resource script cruft,
+                "libopenmpt/libopenmpt.ico",
+                "libopenmpt/libopenmpt_version.rc",
                 "libopenmpt/plugin-common/libopenmpt_plugin_gui.rc"
             ],
             sources: [
@@ -29,6 +40,7 @@ let package = Package(
                 "soundlib/plugins/dmo",
                 "libopenmpt",
             ],
+            // publicHeadersPath: "",
             cxxSettings: [
                 .define("LIBOPENMPT_BUILD"),
                 .headerSearchPath(""),
