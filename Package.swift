@@ -45,7 +45,9 @@ let package = Package(
                 .define("LIBOPENMPT_BUILD"),
                 .headerSearchPath(""),
                 .headerSearchPath("common"),
-                .headerSearchPath("src")
+                .headerSearchPath("src"),
+                // not documented?
+                .headerSearchPath("include/SignalsmithStretch")
             ])
     ],
     cxxLanguageStandard: .cxx17
