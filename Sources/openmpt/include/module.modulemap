@@ -1,0 +1,4 @@
+module openmpt {
+	header "../openmpt/libopenmpt/libopenmpt.hpp"
+	export *
+}

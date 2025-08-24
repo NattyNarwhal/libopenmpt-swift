@@ -16,38 +16,36 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "libopenmpt",
+            // openmpt submodule is in a subdir so we can have a custom include path
             path: "Sources/openmpt",
             exclude: [
                 // i wish i could just specify *.cpp to avoid including these
-                "libopenmpt/Doxyfile",
-                "libopenmpt/bindings",
-                "libopenmpt/in_openmpt",
-                "libopenmpt/xmp-openmpt",
-                "libopenmpt/libopenmpt_test",
-                "libopenmpt/plugin-common",
-                "libopenmpt/libopenmpt.pc.in",
-                "libopenmpt/libopenmpt_version.mk",
+                "openmpt/libopenmpt/Doxyfile",
+                "openmpt/libopenmpt/bindings",
+                "openmpt/libopenmpt/in_openmpt",
+                "openmpt/libopenmpt/xmp-openmpt",
+                "openmpt/libopenmpt/libopenmpt_test",
+                "openmpt/libopenmpt/plugin-common",
+                "openmpt/libopenmpt/libopenmpt.pc.in",
+                "openmpt/libopenmpt/libopenmpt_version.mk",
                 // windows resource script cruft,
-                "libopenmpt/libopenmpt.ico",
-                "libopenmpt/libopenmpt_version.rc",
-                "libopenmpt/plugin-common/libopenmpt_plugin_gui.rc"
+                "openmpt/libopenmpt/libopenmpt.ico",
+                "openmpt/libopenmpt/libopenmpt_version.rc",
+                "openmpt/libopenmpt/plugin-common/libopenmpt_plugin_gui.rc"
             ],
             sources: [
-                "common",
-                "sounddsp",
-                "soundlib",
-                "soundlib/plugins",
-                "soundlib/plugins/dmo",
-                "libopenmpt",
+                "openmpt/common",
+                "openmpt/sounddsp",
+                "openmpt/soundlib",
+                "openmpt/soundlib/plugins",
+                "openmpt/soundlib/plugins/dmo",
+                "openmpt/libopenmpt",
             ],
-            // publicHeadersPath: "",
             cxxSettings: [
                 .define("LIBOPENMPT_BUILD"),
-                .headerSearchPath(""),
-                .headerSearchPath("common"),
-                .headerSearchPath("src"),
-                // not documented?
-                .headerSearchPath("include/SignalsmithStretch")
+                .headerSearchPath("openmpt/"),
+                .headerSearchPath("openmpt/common"),
+                .headerSearchPath("openmpt/src"),
             ])
     ],
     cxxLanguageStandard: .cxx17

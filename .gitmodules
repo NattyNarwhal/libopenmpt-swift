@@ -2,5 +2,5 @@
      	path = Sources/openmpt
      	url = https://github.com/OpenMPT/openmpt.git
 [submodule "Sources/openmpt"]
-	path = Sources/openmpt
+	path = Sources/openmpt/openmpt
 	url = https://github.com/OpenMPT/openmpt
