@@ -1,5 +1,7 @@
 module openmpt {
 	header "../openmpt/libopenmpt/libopenmpt.h"
+	header "../openmpt/libopenmpt/libopenmpt_stream_callbacks_fd.h"
+	header "../openmpt/libopenmpt/libopenmpt_stream_callbacks_file.h"
 	header "../openmpt/libopenmpt/libopenmpt_ext.h"
 	export *
 }
