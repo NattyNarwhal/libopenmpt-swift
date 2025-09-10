@@ -43,10 +43,6 @@ let package = Package(
             ],
             cxxSettings: [
                 .define("LIBOPENMPT_BUILD"),
-                // in platform_quirks.hpp, this should be enabled for Apple
-                // platforms, but fails to be at least with how we're doing
-                // it from an SPM package.
-                .define("MPT_LIBCXX_QUIRK_NO_TO_CHARS_INT"),
                 .headerSearchPath("openmpt/"),
                 .headerSearchPath("openmpt/common"),
                 .headerSearchPath("openmpt/src"),
